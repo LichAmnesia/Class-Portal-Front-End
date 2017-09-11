@@ -247,16 +247,14 @@ html, body {
 .mdl-demo .mdl-menu__container {
   z-index: 99;
 }
+.mdl-card-empty {
+  height: 20px;
+}
 .mdl-footer-fixed-position {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  padding-top: 0px;
-  padding-bottom: 0px;
+  
 }
 .mdl-footer-color {
-  background: #009688;
+  background: #59C3C3;
 }
 
 
