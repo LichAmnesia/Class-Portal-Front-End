@@ -1,0 +1,35 @@
+/*
+* @Author: Lich_Amnesia
+* @Date:   2017-09-17 21:24:31
+* @Last Modified by:   Lich_Amnesia
+* @Last Modified time: 2017-09-17 22:47:14
+*/
+
+body {
+	text-align: center;
+	padding-top: 40px;
+	position: relative;
+	display:flex;/*Flex布局*/
+    display: -webkit-flex; /* Safari */
+    justify-content:center;
+    align-content: center;
+    flex-flow: column wrap;
+}
+
+.buttonCss {
+	flex: 1; 
+	width: 100%;
+}
+
+.alarm {
+	flex: 1; 
+	width: 100%;
+	vertical-align: middle;
+}
+
+.list {
+	flex: 1;
+	width: 100%;
+	padding-left: 45%;
+}
+
