@@ -115,7 +115,7 @@
                             <div class="secondary-text-color">This is the description for Project 1</div>
                         </div>
                         <div class="mdl-card__actions">
-                            <a href="#" class="mdl-button">More about Project 1</a>
+                            <a href="projects/project1/" class="mdl-button">More about Project 1</a>
                         </div>
                     </div>
                     <script>
@@ -178,6 +178,30 @@
                       }).canvas();
                       
                       document.getElementById('lab2').appendChild(pattern_lab2);
+                    </script>
+                </section>
+                <!-- Lab 3 -->
+                <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                    <header id="lab3" class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+                        
+                    </header>
+                    <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+                        <div class="mdl-card__supporting-text">
+                            <h4 class="primary-text-color">Lab 3</h4>
+                            <div class="secondary-text-color">Create a web page using jQuery. Your page should use jQuery to select, filter, and manipulate the page in at least three different ways and use an animation effect.</div>
+                        </div>
+                        <div class="mdl-card__actions">
+                            <a href="labs/lab3/index.html" class="mdl-button">More about Lab 3</a>
+                        </div>
+                    </div>
+                    <script>
+                      parentSize = document.getElementById('lab3').getBoundingClientRect();
+                      var pattern_lab3 = Trianglify({
+                        width: parentSize.width,
+                        height: parentSize.height
+                      }).canvas();
+                      
+                      document.getElementById('lab3').appendChild(pattern_lab3);
                     </script>
                 </section>
             </div>

@@ -2,7 +2,7 @@
  * @Author: Lich_Amnesia
  * @Date:   2017-09-17 21:28:53
  * @Last Modified by:   Lich_Amnesia
- * @Last Modified time: 2017-09-20 17:32:52
+ * @Last Modified time: 2017-09-22 00:32:53
  */
 
 // First change dom background color type. Use click event.
@@ -52,3 +52,5 @@ var pattern = Trianglify({
 
 pattern.setAttribute('id', 'canvas');
 document.body.appendChild(pattern);
+
+
