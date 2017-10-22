@@ -1,7 +1,7 @@
 /*
  * @Author: Shen Huang
  * @Date:   2017-10-05 01:46:08
- * @Last Modified time: 2017-10-05 02:49:07
+ * @Last Modified time: 2017-10-05 10:26:20
  */
 
 
@@ -21,27 +21,31 @@ PIXI.loader
     .add("basics/triangulated_3.png")
     .add("basics/triangulated_4.png")
     .add("basics/triangulated_5.png")
+    .add("basics/triangulated_6.png")
+    .add("basics/triangulated_7.png")
+    .add("basics/triangulated_8.png")
+    .add("basics/triangulated_9.png")
+    .add("basics/triangulated_10.png")
     .load(setup);
 
 //This `setup` function will run when the image has loaded
 var animationStamp = true;
 var approved;
 var denied;
-function setup() {
+var portrait;
+var img_num = Math.floor(Math.random() * 10 + 1);
 
+function setup() {
     //Create the `portrait` sprite from the texture
-    var portrait = new PIXI.Sprite(
-        PIXI.loader.resources["basics/triangulated_" + Math.floor(Math.random() * 5 + 1) + ".png"].texture
+    portrait = new PIXI.Sprite(
+        PIXI.loader.resources["basics/triangulated_" + img_num + ".png"].texture
     );
 
 
     portrait.height = 450;
     portrait.width = 360;
     // portrait.scal.x = (0.0 + portrait.width) / renderer.width;
-
-    //Add the portrait to the stage
     container.addChild(portrait);
-
 
     approved = new PIXI.Sprite(PIXI.loader.resources["basics/approved.png"].texture);
     container.addChild(approved);
@@ -62,6 +66,13 @@ function setup() {
     denied.scale.set(0.5);
     denied.alpha = 0;
 
+
+
+    //Render the container   
+    renderer.render(container);
+}
+
+function animations() {
     var action_alphato = new PIXI.action.AlphaTo(0.9, 1);
     var action_delay = new PIXI.action.DelayTime(1.5);
     // var action_func = new PIXI.action.CallFunc(function() {
@@ -87,8 +98,6 @@ function setup() {
         });
     }
 
-    //Render the container   
-    renderer.render(container);
 }
 
 function generateGraphics(argument) {
@@ -294,7 +303,9 @@ function generateRandomDate(randomSeed, randomLen) {
     var dd = day.getDate();
     var mm = day.getMonth() + 1; //January is 0!
     var yyyy = day.getFullYear();
-
+    if (dd === 1) {
+        dd += 1;
+    }
     if (dd < 10) {
         dd = '0' + dd
     }
@@ -303,8 +314,14 @@ function generateRandomDate(randomSeed, randomLen) {
         mm = '0' + mm
     }
 
+    var ex_dd = (dd - 1);
+
+    if (ex_dd < 10) {
+        ex_dd = '0' + ex_dd
+    }
+
     issue_day = mm + '/' + dd + '/' + yyyy;
-    expiration_day = mm + '/' + dd + '/' + (yyyy + 10);
+    expiration_day = mm + '/' + ex_dd + '/' + (yyyy + 10);
     return [issue_day, expiration_day];
 }
 // info[6], info[7]
@@ -347,10 +364,16 @@ function generateInfoAns() {
     info_ans.push(tmp_info);
 
     // info[3], info[4], info[5], date of birth
-    var tmp_date = generateRandomDate(700000000000, 200000000000);
+    var tmp_date = generateRandomDate(700000000000, 400000000000);
     var birth_date = tmp_date[0];
-    tmp_date = generateRandomDate(700000000000, 200000000000);
+    tmp_date = generateRandomDate(700000000000, 100000000000);
     var issue_day = tmp_date[0];
+    while (birth_date.split('/')[2] > issue_day.split('/')[2]) {
+        tmp_date = generateRandomDate(700000000000, 400000000000);
+        birth_date = tmp_date[0];
+        tmp_date = generateRandomDate(700000000000, 100000000000);
+        issue_day = tmp_date[0];
+    }
     var expiration_day = tmp_date[1];
     tmp_info = new PIXI.Text(birth_date, {
         fontFamily: 'Roboto Bold',
@@ -382,8 +405,7 @@ function generateInfoAns() {
     tmp_info.y = 340;
     info_ans.push(tmp_info);
 
-    var race_list = ["White", "Black", "Asian", "2+ races"];
-    tmp_info = new PIXI.Text(race_list[Math.floor(Math.random() * sex_list.length)], {
+    tmp_info = new PIXI.Text(race_list[Math.floor(Math.random() * race_list.length)], {
         fontFamily: 'Roboto Bold',
         fontSize: 24,
         fill: 'black',
@@ -393,12 +415,22 @@ function generateInfoAns() {
     tmp_info.y = 280;
     info_ans.push(tmp_info);
 
-    tmp_info = new PIXI.Text(sex_list[Math.floor(Math.random() * sex_list.length)], {
-        fontFamily: 'Roboto Bold',
-        fontSize: 24,
-        fill: 'black',
-        align: 'left'
-    });
+    if (img_num === 1 || img_num === 5 || img_num === 7 || img_num === 9) {
+        tmp_info = new PIXI.Text(sex_list[1], {
+            fontFamily: 'Roboto Bold',
+            fontSize: 24,
+            fill: 'black',
+            align: 'left'
+        });
+    } else {
+        tmp_info = new PIXI.Text(sex_list[0], {
+            fontFamily: 'Roboto Bold',
+            fontSize: 24,
+            fill: 'black',
+            align: 'left'
+        });
+    }
+
     tmp_info.x = 650;
     tmp_info.y = 340;
     info_ans.push(tmp_info);
@@ -463,6 +495,7 @@ function redisplay() {
 
 function onyesClick() {
     animationStamp = true;
+    animations();
     animate();
     window.setTimeout(redisplay, 3000);
     // for (var i = container.children.length - 1; i >= 0; i--) { container.removeChild(container.children[i]); };
@@ -474,22 +507,47 @@ function onyesClick() {
 
 function onnoClick() {
     animationStamp = false;
+    animations();
     animate();
-
+    window.setTimeout(redisplay, 3000);
 }
 
-function display() {
-    var portrait = new PIXI.Sprite(
-        PIXI.loader.resources["basics/triangulated_" + Math.floor(Math.random() * 5 + 1) + ".png"].texture
-    );
+function display(first_img_num) {
+    if (first_img_num != null) {
+        img_num = 5;
 
+    } else {
+        img_num = Math.floor(Math.random() * 10 + 1);
+
+    }
+    //Create the `portrait` sprite from the texture
+    portrait = new PIXI.Sprite(
+        PIXI.loader.resources["basics/triangulated_" + img_num + ".png"].texture
+    );
 
     portrait.height = 450;
     portrait.width = 360;
     // portrait.scal.x = (0.0 + portrait.width) / renderer.width;
-
-    //Add the portrait to the stage
     container.addChild(portrait);
+
+    approved = new PIXI.Sprite(PIXI.loader.resources["basics/approved.png"].texture);
+    container.addChild(approved);
+
+    approved.anchor.set(0.8);
+    approved.position.x = 600;
+    approved.position.y = 500;
+    approved.scale.set(0.5);
+    approved.alpha = 0;
+
+
+    denied = new PIXI.Sprite(PIXI.loader.resources["basics/denied.png"].texture);
+    container.addChild(denied);
+
+    denied.anchor.set(0.8);
+    denied.position.x = 600;
+    denied.position.y = 500;
+    denied.scale.set(0.5);
+    denied.alpha = 0;
 
     generateGraphics();
     container.addChild(question_1);
@@ -516,5 +574,5 @@ function animate() {
 }
 
 $(document).ready(function() {
-    display();
+    display(5);
 });

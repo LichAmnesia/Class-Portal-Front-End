@@ -1,8 +1,7 @@
 /*
-* @Author: Lich_Amnesia
+* @Author: Shen Huang
 * @Date:   2017-09-17 21:24:31
-* @Last Modified by:   Lich_Amnesia
-* @Last Modified time: 2017-10-03 10:23:19
+* @Last Modified time: 2017-10-10 16:40:08
 */
 
 html, body {
@@ -24,6 +23,6 @@ html, body {
 
 
 #myCanvas {
-  height: 730px;
-  width: 1440px;
+  height: 240px;
+  width: 1000px;
 }

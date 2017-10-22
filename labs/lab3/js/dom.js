@@ -1,8 +1,7 @@
 /*
- * @Author: Lich_Amnesia
+ * @Author: Shen Huang
  * @Date:   2017-09-17 21:28:53
- * @Last Modified by:   Lich_Amnesia
- * @Last Modified time: 2017-10-03 10:23:17
+ * @Last Modified time: 2017-10-09 16:41:23
  */
 
 // set sky background 

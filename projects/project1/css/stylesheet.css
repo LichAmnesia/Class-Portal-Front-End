@@ -1,8 +1,7 @@
 /*
-* @Author: Lich_Amnesia
+* @Author: Shen Huang
 * @Date:   2017-09-27 23:18:11
-* @Last Modified by:   Lich_Amnesia
-* @Last Modified time: 2017-10-04 20:36:56
+* @Last Modified time: 2017-10-09 16:41:53
 */
 
 html, body {
@@ -12,5 +11,5 @@ html, body {
 }
 
 canvas {
-    padding:  10%;
+    padding: 5% 10% 5% 10%;
 }
