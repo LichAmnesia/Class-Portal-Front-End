@@ -104,7 +104,7 @@
             </div>
             <!-- Projects layout -->
             <div class="mdl-layout__tab-panel" id="projects">
-              <!-- project1 -->
+                <!-- project1 -->
                 <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
                     <header id="project1" class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
                         <!-- <i class="material-icons">play_circle_filled</i> -->
@@ -127,6 +127,31 @@
                       }).canvas();
                       
                       document.getElementById('project1').appendChild(pattern_project1);
+                    </script>
+                </section>
+                <!-- project2 -->
+                <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                    <header id="project2" class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+                        <!-- <i class="material-icons">play_circle_filled</i> -->
+                    </header>
+                    <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+                        <div class="mdl-card__supporting-text">
+                            <h4 class="primary-text-color">Project 2</h4>
+                            <div class="secondary-text-color">This is the description for Project 2</div>
+                        </div>
+                        <div class="mdl-card__actions">
+                            <a href="projects/project2/" class="mdl-button">More about Project 2</a>
+                        </div>
+                    </div>
+                    <script>
+                      parentSize = document.getElementById('project2').getBoundingClientRect();
+                      var pattern_project2 = Trianglify({
+                        width: parentSize.width,
+                        height: parentSize.height,
+                        cell_size: 60
+                      }).canvas();
+                      
+                      document.getElementById('project2').appendChild(pattern_project2);
                     </script>
                 </section>
             </div>
@@ -251,6 +276,31 @@
                       }).canvas();
                       
                       document.getElementById('lab4').appendChild(pattern_lab4);
+                    </script>
+                </section>
+
+                <!-- Lab 5 -->
+                <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                    <header id="lab5" class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+                        
+                    </header>
+                    <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+                        <div class="mdl-card__supporting-text">
+                            <h4 class="primary-text-color">Lab 5</h4>
+                            <div class="secondary-text-color">The Lab 5: Create a web page that uses Firebase to store data. You should write data(or an image) to Firebase and then read the data and write it to a page(on a different or same page).</div>
+                        </div>
+                        <div class="mdl-card__actions">
+                            <a href="labs/lab5/index.html" class="mdl-button">More about Lab 5</a>
+                        </div>
+                    </div>
+                    <script>
+                      parentSize = document.getElementById('lab5').getBoundingClientRect();
+                      var pattern_lab5 = Trianglify({
+                        width: parentSize.width,
+                        height: parentSize.height
+                      }).canvas();
+                      
+                      document.getElementById('lab5').appendChild(pattern_lab5);
                     </script>
                 </section>
             </div>
