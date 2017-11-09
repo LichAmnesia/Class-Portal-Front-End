@@ -1,8 +1,9 @@
 /*
  * @Author: Shen Huang
  * @Date:   2017-09-17 21:28:53
- * @Last Modified time: 2017-11-07 15:03:50
- * Refer Google Map API document.
+ * @Last Modified time: 2017-11-09 09:05:53
+ * Refer Google Map API document. Autocomple part code is editted from Google Map API document.
+ * 
  */
 
 
