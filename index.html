@@ -154,6 +154,32 @@
                       document.getElementById('project2').appendChild(pattern_project2);
                     </script>
                 </section>
+                <!-- grad project -->
+                <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+                    <header id="gradproject" class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+                        <!-- <i class="material-icons">play_circle_filled</i> -->
+                    </header>
+                    <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+                        <div class="mdl-card__supporting-text">
+                            <h4 class="primary-text-color">Grad Project</h4>
+                            <div class="secondary-text-color">This is the description for Grad Project</div>
+                        </div>
+                        <div class="mdl-card__actions">
+                            <a href="projects/gradproject/" class="mdl-button">More about Grad Project</a>
+                        </div>
+                    </div>
+                    <script>
+                      parentSize = document.getElementById('gradproject').getBoundingClientRect();
+                      var pattern_gradproject = Trianglify({
+                        width: parentSize.width,
+                        height: parentSize.height,
+                        cell_size: 60
+                      }).canvas();
+                      
+                      document.getElementById('gradproject').appendChild(pattern_gradproject);
+                    </script>
+                </section>
+                
             </div>
             <!-- Labs layout -->
             <div class="mdl-layout__tab-panel" id="labs">
